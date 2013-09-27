@@ -1,0 +1,29 @@
+<h1>Listing spielers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Punkte</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @spielers.each do |spieler| %>
+      <tr>
+        <td><%= spieler.name %></td>
+        <td><%= spieler.punkte %></td>
+        <td><%= link_to 'Show', spieler %></td>
+        <td><%= link_to 'Edit', edit_spieler_path(spieler) %></td>
+        <td><%= link_to 'Destroy', spieler, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Spieler', new_spieler_path %>
