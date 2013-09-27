@@ -1,9 +1,5 @@
 LanGamesGenerator::Application.routes.draw do
-  resource :users
-  resource :categories
-  resource :games
-  resource :players
-
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
