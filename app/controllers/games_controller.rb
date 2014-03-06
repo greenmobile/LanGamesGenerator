@@ -5,20 +5,25 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
     @games = Game.all
+    @categories = Category.all
   end
 
   # GET /games/1
   # GET /games/1.json
   def show
+    @categories = Category.all
+    @game = Game.find(params[:id])
   end
 
   # GET /games/new
   def new
     @game = Game.new
+    @categories = Category.all
   end
 
   # GET /games/1/edit
   def edit
+     @categories = Category.all
   end
 
   # POST /games

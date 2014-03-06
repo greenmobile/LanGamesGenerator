@@ -1,5 +1,14 @@
 LanGamesGenerator::Application.routes.draw do
- 
+  root "home#index"
+  resources :users
+  #get "/categories" => "categories#index", as: "categories"
+  #get "categories/new" => "categories#new", as: "new_category"
+  resources :categories
+  #get "/games" => "games#index", as: "games"
+  #get "game/new" => "games#new", as: "new_game"
+  resources :games
+  resources :players
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

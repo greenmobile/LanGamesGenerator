@@ -1,4 +1,4 @@
-<h1>Listing games</h1>
+<h1>Alle Spiele</h1>
 
 <table>
   <thead>
@@ -15,7 +15,7 @@
     <% @games.each do |game| %>
       <tr>
         <td><%= game.name %></td>
-        <td><%= game.category_id %></td>
+        <td><%= @categories.find(game.category_id).name %></td>
         <td><%= link_to 'Show', game %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>
         <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +26,7 @@
 
 <br>
 
-<%= link_to 'New Game', new_game_path %>
+<%= link_to 'Neues Spiel', new_game_path %>
+<br />
+<%= link_to 'Neue Category', new_category_path %>
+
